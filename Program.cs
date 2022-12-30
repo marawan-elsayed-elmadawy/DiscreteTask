@@ -4,41 +4,32 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace project_1
+namespace console_app_2
 {
     internal class Program
     {
         static void Main(string[] args)
-        {//Project 1
-         // write a C# program to write the prime numbers from ni to n2.
-         //The Input: n1 and n2
-         //The Output: The list of the prime numbers from ni to n2
-         //Example: For the input numbers: n1 = 5 and n2 = 18, the output should be
-         // 5 1/7 //11 //13 //17
-         Console.WriteLine("enter n1");
-         int n1 = int.Parse(Console.ReadLine());
-         Console.WriteLine("enter n2");
-         int n2 = int.Parse(Console.ReadLine());
-         Console.WriteLine("the prime numbers between {0} and {1}", n1, n2);
-         for (int i = n1; i <= n2; i++)
-         {
-             int counter = 0;
-             for (int j = 2; j <= i / 2; j++)
-                 if (i % j == 0)
-                 { }
-             counter++;
-             break;
+        {
+            int First, second, X, Y, sum;
+            Console.WriteLine("Enter the first");
+            First = int.Parse(Console.ReadLine());
 
-             if (counter == 0 && i != 1)
-             {
-                 Console.WriteLine("{0}", i);
-             }
+            Console.WriteLine("Enter the second");
+            second = int.Parse(Console.ReadLine());
+            for (X = First; X <= second; X++)
+            {
+                Y = 1;
+                sum = 0;
+                while (Y < X)
+                {
+                    if (X % Y == 0)
+                        sum = sum + Y;
+                    Y++;
+                }
+                if (sum == X && X != 0)
 
-
+                    Console.WriteLine("{0}", X);
             }
         }
     }
 }
-        
-    
-
